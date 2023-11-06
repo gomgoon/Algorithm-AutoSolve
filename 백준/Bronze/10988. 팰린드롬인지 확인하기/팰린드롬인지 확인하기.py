@@ -1,0 +1,5 @@
+strArray = input()
+reversedStrArray = list(strArray)
+reversedStrArray.reverse()
+reversedStrArray = ''.join(reversedStrArray)
+print("1" if strArray == reversedStrArray else "0")
