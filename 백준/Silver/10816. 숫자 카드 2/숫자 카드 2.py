@@ -1,11 +1,18 @@
-import collections
-
 n = int(input())
-lis1 = list(map(int,input().split()))
+arr1 = list(map(int,input().split()))
 m = int(input())
-lis2 = list(map(int,input().split()))
+arr2 = list(map(int,input().split()))
 
-clis1 = collections.Counter(lis1)
+cnt = {}
 
-for num in lis2:
-    print(f'{clis1[num]}',end=' ')
+for i in arr1:
+    if i in cnt.keys():
+        cnt[i] += 1
+    else:
+        cnt[i] = 1
+
+for i in arr2:
+    if i in cnt.keys():
+        print(cnt[i], end=' ')
+    else:
+        print('0', end = ' ')
