@@ -19,18 +19,8 @@ public class Main {
             if(i==0 || i==1)
                 arr[i] = i+1;
             else
-                arr[i] = 0;
+                arr[i] = (arr[i - 1] + arr[i - 2]) % 15746;
         }
-
-        System.out.println(tile(n - 1));
-    }
-
-    public static int tile(int idx) {
-        if (arr[idx] != 0)
-            return arr[idx];
-        else {
-            arr[idx] = (tile(idx-1) + tile(idx-2)) % 15746;
-            return arr[idx];
-        }
+        System.out.println(arr[n-1]);
     }
 }
